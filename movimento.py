@@ -61,12 +61,13 @@ def convert_coords():
     delta_up = current.rotation_up_z - previous.rotation_up_z
     delta_forward = current.rotation_forward_z - previous.rotation_forward_z
 
-    hipotenuse = (current.translation_z + previous.translation_z)/2
+    z = (current.translation_z + previous.translation_z)/2
     
+    delta_x = math.tan(delta_right) * z
+    delta_y = math.tan(delta_up) * z
     
-
     new_x = current_x + delta_x
-    new_y = current_y + delta_y
+    new_y = current_y - delta_y
 
     return new_x, new_y
 
