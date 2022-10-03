@@ -26,7 +26,7 @@ class MarkerInfo:
     rotation_forward_z: float = 0
 
 
-markers = []
+markers = [None, None]
 
 
 def main():
@@ -36,11 +36,11 @@ def main():
     pyautogui.moveTo(h_size/2, v_size/2)
 
 
-    websocket.enableTrace(True)
+    # websocket.enableTrace(True)
     ws = websocket.WebSocketApp("ws://localhost:5678",
                               on_open=on_open,
                               on_message=on_message,
-                            #   on_error=on_error,
+                              on_error=on_error,
                               on_close=on_close)
 
     ws.run_forever(dispatcher=rel)  # Set dispatcher to automatic reconnection
@@ -51,7 +51,7 @@ def update_markers(marker_info: MarkerInfo):
     markers[0] = markers[1]
     markers[1] = marker_info
 
-def convert_coords():
+def get_coords():
     current_x, current_y = pyautogui.position()
 
     previous: MarkerInfo = markers[0]
@@ -79,12 +79,12 @@ def on_message(ws, message_json):
     
     update_markers(marker_info)
 
-    x, y = convert_coords()
+    x, y = get_coords()
 
-    # pyautogui.moveTo(x, y)
-    print(f"coords: {x}, {y}")
+    pyautogui.moveTo(x, y)
+    # print(f"coords: {x}, {y}")
     
-    # print(marker_info)s
+    # print(marker_info)
 
 def on_error(ws, error):
     print(error)
