@@ -6,6 +6,7 @@ import json
 import pyautogui
 import math
 import numpy as np
+from ctypes import *
 
 pyautogui.FAILSAFE = False
 
@@ -46,6 +47,14 @@ v_ref = v_size_pixels / 2
 
 pi = math.pi
 
+mydll = cdll.LoadLibrary(r".\get_coord.dll")
+mydll.get_coord.argtypes = [c_int, c_float, c_float, c_float, c_float, c_float]
+
+new_x= mydll.get_coord(1, 1., 2., 3., 4., 5.)
+new_y= mydll.get_coord(0, 1., 2., 3., 4., 5.)
+
+print ("new_x value:", new_x)
+print ("new_y value:", new_y)
 
 def main():
 
