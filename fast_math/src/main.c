@@ -28,7 +28,7 @@ float get_coord(
 	if (h_or_v == 'h') {
 		new_coord = h_or_v_ref - (translation_x_or_y + S * delta) * h_or_v_density;
 	} else {
-		new_coord = h_or_v_ref + (translation_x_or_y + S * delta) * h_or_v_density;
+		new_coord = h_or_v_ref + (translation_x_or_y - S * delta) * h_or_v_density;
 	}
 	
 	return new_coord;
