@@ -1,15 +1,9 @@
-#include <iostream>
 #include <math.h>
-
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
 #define S 0.1
 #define PI 3.14159265358979323846
 
-
-float get_coord(
+__declspec(dllexport) float __cdecl get_coord(
 	char h_or_v,
 	float translation_x_or_y, 
 	float translation_z, 
