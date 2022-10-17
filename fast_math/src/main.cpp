@@ -8,7 +8,12 @@
 #define S 0.1
 #define PI 3.14159265358979323846
 
-int main(int argc, char *argv[]) {
+struct Coord {
+	float x;
+	float y;
+};
+
+Coord get_coords(int argc, char *argv[]) {
 	
 	float translation_x = atof(argv[1]); 
 	float translation_y = atof(argv[2]); 
@@ -29,9 +34,5 @@ int main(int argc, char *argv[]) {
 	new_x = h_ref - (translation_x + S * delta_x) * h_density;
 	new_y = v_ref - (translation_y + S * delta_y) * v_density;
 
-	printf("%lf\n", new_x );
-	printf("%lf\n", new_y );
-
-	return 0;
-
+	return {new_x, new_y};
 }
