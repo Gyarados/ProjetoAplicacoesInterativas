@@ -13,18 +13,16 @@ struct Coord {
 	float y;
 };
 
-Coord get_coords(int argc, char *argv[]) {
+__declspec(dllexport) Coord __cdecl get_coords(float translation_x,
+	float translation_y,
+	float translation_z, 
+	float rotation_right_z, 
+	float rotation_up_z,
+	float h_ref, 
+	float v_ref, 
+	float h_density, 
+	float v_density) {
 	
-	float translation_x = atof(argv[1]); 
-	float translation_y = atof(argv[2]); 
-	float translation_z = atof(argv[3]); 
-	float rotation_right_z = atof(argv[4]); 
-	float rotation_up_z = atof(argv[5]);
-	float h_ref = atof(argv[6]); 
-	float v_ref = atof(argv[7]); 
-	float h_density = atof(argv[8]); 
-	float v_density = atof(argv[9]);
-
 	float delta_x, delta_y;
 	float new_x, new_y;
 
