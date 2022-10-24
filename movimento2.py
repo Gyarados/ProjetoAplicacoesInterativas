@@ -5,7 +5,6 @@ import rel
 import json
 import pyautogui
 import math
-import numpy as np
 from ctypes import *
 
 pyautogui.FAILSAFE = False
@@ -49,12 +48,13 @@ pi = math.pi
 
 mydll = cdll.LoadLibrary(r".\get_coord.dll")
 mydll.get_coord.argtypes = [c_int, c_float, c_float, c_float, c_float, c_float]
+mydll.get_coord.restype = c_float
 
-new_x= mydll.get_coord(1, 1., 2., 3., 4., 5.)
-new_y= mydll.get_coord(0, 1., 2., 3., 4., 5.)
+# new_x= mydll.get_coord(1, 1., 2., 3., 4., 5.)
+# new_y= mydll.get_coord(0, 1., 2., 3., 4., 5.)
 
-print ("new_x value:", new_x)
-print ("new_y value:", new_y)
+# print ("new_x value:", new_x)
+# print ("new_y value:", new_y)
 
 def main():
 
@@ -75,15 +75,15 @@ def main():
     rel.signal(2, rel.abort)  # Keyboard Interrupt
     rel.dispatch()
 
-def get_coords(current):
+# def get_coords(current):
 
-    delta_x = np.tan([current.rotation_right_z * pi])[0] * current.translation_z
-    delta_y = np.tan([current.rotation_up_z * pi])[0] * current.translation_z
+#     delta_x = np.tan([current.rotation_right_z * pi])[0] * current.translation_z
+#     delta_y = np.tan([current.rotation_up_z * pi])[0] * current.translation_z
     
-    new_x = h_ref - (current.translation_x + 0.1 * delta_x) * h_density
-    new_y = v_ref + (current.translation_y - 0.1 * delta_y) * v_density
+#     new_x = h_ref - (current.translation_x + 0.1 * delta_x) * h_density
+#     new_y = v_ref + (current.translation_y - 0.1 * delta_y) * v_density
 
-    return new_x, new_y
+#     return new_x, new_y
 
 def on_message(ws, message_json):
 
@@ -94,15 +94,16 @@ def on_message(ws, message_json):
 
     global message_counter
 
-    if message_counter < 5:
+    if message_counter < 2:
         message_counter += 1
         return
     else:
         message_counter = 0
 
-        marker_info = MarkerInfo(**message_dict)
+        # marker_info = MarkerInfo(**message_dict)
 
-        x, y = get_coords(marker_info)
+        x = mydll.get_coord(1, message_dict['translation_x'], message_dict['translation_z'], message_dict['rotation_right_z'], h_ref, h_density)
+        y = mydll.get_coord(0, message_dict['translation_y'], message_dict['translation_z'], message_dict['rotation_up_z'], v_ref, v_density)
 
         pyautogui.moveTo(x, y)
 
