@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "96YaxVYy2qLmnIXVwWoYv8xvd1rEiBfXBRyAgOCKN3Nb9+uJmOtYl9bJeN11uAkQZE0yXS6mMyYpT9m2fyUFqQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\lcode\\Desktop\\projeto\\projeto.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lcode\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\lcode\\.nuget\\packages\\system.reactive\\4.3.2\\system.reactive.4.3.2.nupkg.sha512",
+    "C:\\Users\\lcode\\.nuget\\packages\\system.threading.channels\\4.7.0\\system.threading.channels.4.7.0.nupkg.sha512",
+    "C:\\Users\\lcode\\.nuget\\packages\\websocket.client\\4.4.43\\websocket.client.4.4.43.nupkg.sha512"
+  ],
+  "logs": []
+}
