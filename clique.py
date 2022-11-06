@@ -1,7 +1,8 @@
 import pyautogui
 import speech_recognition as sr
-import asyncio
 import pyaudio
+
+pyautogui.FAILSAFE = False
 
 for i in range(pyaudio.PyAudio().get_device_count()):
     print(pyaudio.PyAudio().get_device_info_by_index(i))
@@ -34,7 +35,7 @@ def ouvir_microfone():
         
         #Passa a variável para o algoritmo reconhecedor de padroes
         frase: str = recognizer.recognize_google(audio,language='pt-BR')
-        if "clica" in frase.lower():
+        if "click" or "clique" in frase.lower():
             pyautogui.click()  
         #Retorna a frase pronunciada
         print("Você disse: " + frase)
