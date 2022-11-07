@@ -18,3 +18,23 @@ C:\Users\lcode\Desktop\projeto\obj\Debug\net6.0\refint\projeto.dll
 C:\Users\lcode\Desktop\projeto\obj\Debug\net6.0\projeto.pdb
 C:\Users\lcode\Desktop\projeto\obj\Debug\net6.0\projeto.genruntimeconfig.cache
 C:\Users\lcode\Desktop\projeto\obj\Debug\net6.0\ref\projeto.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\projeto.exe
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\projeto.deps.json
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\projeto.runtimeconfig.json
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\projeto.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\projeto.pdb
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\Websocket.Client.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\System.Reactive.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\bin\Debug\net6.0\System.Reactive.xml
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.csproj.AssemblyReference.cache
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.AssemblyInfoInputs.cache
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.AssemblyInfo.cs
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.csproj.CoreCompileInputs.cache
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.csproj.CopyComplete
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\refint\projeto.dll
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.pdb
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\projeto.genruntimeconfig.cache
+C:\Users\lcode\Documents\Poli\Tecnologias Interativas\ProjetoAplicacoesInterativas\codigo_cs\obj\Debug\net6.0\ref\projeto.dll

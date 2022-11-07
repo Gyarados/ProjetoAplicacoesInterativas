@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "96YaxVYy2qLmnIXVwWoYv8xvd1rEiBfXBRyAgOCKN3Nb9+uJmOtYl9bJeN11uAkQZE0yXS6mMyYpT9m2fyUFqQ==",
+  "dgSpecHash": "9x0TNROmzvZdpwThXQnOIKuJ2UyPjyjWLOaZDs8v8RhGtS0vr8aLKEuR8BPEtr/ehwUtoDVrPrTDqyfCyISoLA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\lcode\\Desktop\\projeto\\projeto.csproj",
+  "projectFilePath": "C:\\Users\\lcode\\Documents\\Poli\\Tecnologias Interativas\\ProjetoAplicacoesInterativas\\codigo_cs\\projeto.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lcode\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lcode\\.nuget\\packages\\system.reactive\\4.3.2\\system.reactive.4.3.2.nupkg.sha512",
