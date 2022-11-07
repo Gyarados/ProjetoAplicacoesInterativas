@@ -35,7 +35,7 @@ def ouvir_microfone():
         
         #Passa a variável para o algoritmo reconhecedor de padroes
         frase: str = recognizer.recognize_google(audio,language='pt-BR')
-        if "click" or "clique" in frase.lower():
+        if "clica" in frase.lower() or "clique" in frase.lower() or "click" in frase.lower():
             pyautogui.click()  
         #Retorna a frase pronunciada
         print("Você disse: " + frase)
