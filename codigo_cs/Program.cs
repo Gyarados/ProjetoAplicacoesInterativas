@@ -47,23 +47,18 @@ namespace WebsocketTest {
                         Console.WriteLine("Message received: " + msg);
                         var coord = Welcome.FromJson(msg.ToString());
 
-
-
                         double delta_x = Math.Tan(coord.RotationRightZ * Math.PI) * coord.TranslationZ;
                         double delta_y = Math.Tan(coord.RotationUpZ * Math.PI) * coord.TranslationZ;
 
                         double new_coord_x = h_ref - (coord.TranslationX + S * delta_x) * h_density;
                         double new_coord_y = v_ref + (coord.TranslationY - S * delta_y) * v_density;
 
-                        
                         Console.WriteLine("Ponto calculado: " + new_coord_x.ToString() + ", " + new_coord_y.ToString());
 
                         MoveCursorToPoint(((int)new_coord_x), ((int)new_coord_y));
                     });
 
                     client.Start();
-
-                    //Task.Run(() => client.Send("{ message }"));
 
                     exitEvent.WaitOne();
                 }
