@@ -1,13 +1,4 @@
-﻿// using System;
-// using System.Collections.Concurrent;
-// using System.Collections.Generic;
-// using System.Linq;
-// using System.Text;
-// using System.Threading;
-// using System.Threading.Tasks;
-// using System.Net.WebSockets;
-
-using System.Runtime.InteropServices;
+﻿using System.Runtime.InteropServices;
 
 using Websocket.Client;
 
@@ -15,14 +6,12 @@ using WebsocketARTracking;
 
 namespace WebsocketTest {
     class Program {
-        // private string streaming_API_Key = "streaming_api_key";
-        [DllImport("user32.dll")]
+        [DllImport("user32.dll")] // import para movimentação do mouse
         static extern bool SetCursorPos(int X, int Y);
 
-        public static void MoveCursorToPoint(int x, int y)
-                        {
-                            SetCursorPos(x, y);
-                        }
+        public static void MoveCursorToPoint(int x, int y) {
+            SetCursorPos(x, y);
+        }
 
         static void Main(string[] args) {
             Program prg = new Program();
@@ -32,13 +21,13 @@ namespace WebsocketTest {
         private void Initialize() {
             Console.CursorVisible = false;
 
-            double S = 0.1;
+            double S = 0.1; // sensibilidade
 
-            double h_ref = 960;
-            double h_density = 55.81395348837209;
+            double h_ref = 960; // número de pixel horizontais dividido por 2
+            double h_density = 55.81395348837209; // número de pixel horizontais divido pela altura em centímetros
 
-            double v_ref = 540;
-            double v_density = 55.95854922279793;
+            double v_ref = 540; // número de pixel verticais dividido por 2
+            double v_density = 55.95854922279793; // número de pixel verticais divido pela altura em centímetros
 
             try {
                 var exitEvent = new ManualResetEvent(false);
@@ -70,13 +59,6 @@ namespace WebsocketTest {
                         Console.WriteLine("Ponto calculado: " + new_coord_x.ToString() + ", " + new_coord_y.ToString());
 
                         MoveCursorToPoint(((int)new_coord_x), ((int)new_coord_y));
-
-
-                        // if (msg.ToString().ToLower() == "connected")
-                        // {
-                        //     string data = "{\"userKey\":\"" + streaming_API_Key + "\", \"symbol\":\"EURUSD,GBPUSD,USDJPY\"}";
-                        //     client.Send(data);
-                        // }
                     });
 
                     client.Start();
