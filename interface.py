@@ -17,6 +17,8 @@ fg_color = 'white'
 
 voz_proc = None
 tempo_proc = None
+movement_proc = None
+
 
 class App(threading.Thread):
 
@@ -31,7 +33,7 @@ class App(threading.Thread):
         selection = "You selected the option " + str(self.click_mode_var.get())
 
     def on_start(self):
-        global voz_proc, tempo_proc
+        global voz_proc, tempo_proc, movement_proc
         self.start_btn["state"] = "disabled"
         self.end["state"] = "normal"
         self.switch["state"] = "disabled"
@@ -44,7 +46,7 @@ class App(threading.Thread):
             # clique_voz.activate()
             # self.root.after(0, clique_voz.ouvir_microfone(self.root))
             voz_proc = subprocess.Popen('python clique_voz.py')
-            print(voz_proc)
+            movement_proc = subprocess.Popen(r"codigo_cs\bin\Debug\net6.0\projeto.exe")
 
 
         if self.click_mode_var.get() == TEMPO:
@@ -54,6 +56,7 @@ class App(threading.Thread):
             # cliquetempo.activate()
             # self.root.after(0, clique_tempo.wait_for_movement(self.root))
             tempo_proc = subprocess.Popen('python clique_tempo.py')
+            movement_proc = subprocess.Popen(r"codigo_cs\bin\Debug\net6.0\projeto.exe")
 
     def on_end(self):
         global voz_proc, tempo_proc
@@ -69,11 +72,16 @@ class App(threading.Thread):
         if voz_proc: 
             print(voz_proc)
             voz_proc.kill()
-            
+
         print(tempo_proc)
         if tempo_proc: 
             print(tempo_proc)
             tempo_proc.kill()
+
+        print(movement_proc)
+        if movement_proc: 
+            print(movement_proc)
+            movement_proc.kill()
         # os.system('taskkill -f -im clique_tempo')
         # os.system('taskkill -f -im clique_voz')
 

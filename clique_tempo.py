@@ -8,8 +8,8 @@ running = False
 saved_x, saved_y = pyautogui.position()
 count = 0
 
-time_to_wait = 5 # in seconds
-epsilon = 5
+time_to_wait = 2 # in seconds
+epsilon = 15
 sleep_time = 0.05
 
 
