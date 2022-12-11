@@ -9,6 +9,10 @@ running = False
 # for i in range(pyaudio.PyAudio().get_device_count()):
 #     print(pyaudio.PyAudio().get_device_info_by_index(i))
 
+click_1_commands = ["clica", "clique", "click", 'esquerdo']
+click_2_commands = ["clica direito", "clique direito", "click direito", 'direito']
+scroll_commands = ['scroll', 'rodinha', 'rola', 'roda', 'rolamento']
+double_click_commands = ['entrar', 'duplo', 'double', 'dois']
 
 #Função para ouvir e reconhecer a fala
 def ouvir_microfone(root=None):
@@ -36,8 +40,18 @@ def ouvir_microfone(root=None):
         
         #Passa a variável para o algoritmo reconhecedor de padroes
         frase: str = recognizer.recognize_google(audio,language='pt-BR')
-        if "clica" in frase.lower() or "clique" in frase.lower() or "click" in frase.lower():
+
+        frase_lower = frase.lower()
+        if frase_lower in click_1_commands:
             pyautogui.click()  
+        if frase_lower in click_2_commands:
+            pyautogui.rightClick()  
+        if frase_lower in scroll_commands:
+            pyautogui.middleClick()   
+        if frase_lower in double_click_commands:
+            pyautogui.doubleClick()
+        # if "clica" in frase.lower() or "clique" in frase.lower() or "click" in frase.lower():
+        #     pyautogui.click()  
         #Retorna a frase pronunciada
         print("Você disse: " + frase)
         
