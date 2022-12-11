@@ -4,12 +4,14 @@ import pyaudio
 
 pyautogui.FAILSAFE = False
 
-for i in range(pyaudio.PyAudio().get_device_count()):
-    print(pyaudio.PyAudio().get_device_info_by_index(i))
+running = False
+
+# for i in range(pyaudio.PyAudio().get_device_count()):
+#     print(pyaudio.PyAudio().get_device_info_by_index(i))
 
 
 #Função para ouvir e reconhecer a fala
-def ouvir_microfone():
+def ouvir_microfone(root=None):
     #Habilita o microfone do usuário
     recognizer = sr.Recognizer()
     
@@ -25,7 +27,6 @@ def ouvir_microfone():
         try:
             #Armazena o que foi dito numa variavel
             audio = recognizer.listen(source, phrase_time_limit=3)
-            print(audio)
             print("Processando...")
         except sr.WaitTimeoutError:
             print("Não escutei")
@@ -43,14 +44,20 @@ def ouvir_microfone():
     #Se nao reconheceu o padrao de fala, exibe a mensagem
     except sr.UnknownValueError:
         print("Não entendi")
+    
+    if root:
+        root.update()
+        root.after(0, ouvir_microfone(root))
 
 
-def main():
-    while True:
+def activate():
+    global running
+    while running:
         ouvir_microfone()
     
 if __name__ == "__main__":
     try:
-        main()
+        running = True
+        activate()
     except Exception as e:
         print(e)

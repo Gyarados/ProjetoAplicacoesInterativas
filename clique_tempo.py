@@ -1,6 +1,9 @@
+import threading
 from time import sleep
 import pyautogui
 import math
+
+running = False
 
 saved_x, saved_y = pyautogui.position()
 count = 0
@@ -13,12 +16,17 @@ sleep_time = 0.05
 def get_distance(x1, y1, x2, y2):
     return math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
 
-def mouse_not_moved(count):
-    return count * sleep_time >= time_to_wait
 
-def main():
-    global saved_x, saved_y, count, time_to_wait, epsilon, sleep_time
-    while True:
+class CliqueTempo(threading.Thread):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        self.start()
+
+    def mouse_not_moved(self, count):
+        return count * sleep_time >= time_to_wait
+
+    def run(self, root=None):
+        global saved_x, saved_y, count, time_to_wait, epsilon, sleep_time
         print('bbb')
         current_x, current_y = pyautogui.position()
         print('current_x, current_y:', current_x, current_y)
@@ -33,12 +41,21 @@ def main():
         else:
             count = 0
 
-        if mouse_not_moved(count):
+        if self.mouse_not_moved(count):
             print('clicou')
             pyautogui.click()  
             count = 0
         sleep(sleep_time)
         print('aaa')
+        if root:
+            root.after(0, self.run(root))
+
+    def activate(self):
+        global running
+        while running:
+            self.run()
 
 if __name__ == "__main__":
-    main()
+    running = True
+    cliquetempo = CliqueTempo()
+    cliquetempo.activate()
