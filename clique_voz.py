@@ -13,6 +13,8 @@ click_1_commands = ["clica", "clique", "click", 'esquerdo']
 click_2_commands = ["clica direito", "clique direito", "click direito", 'direito']
 scroll_commands = ['scroll', 'rodinha', 'rola', 'roda', 'rolamento']
 double_click_commands = ['entrar', 'duplo', 'double', 'dois']
+type_commands = ['digite', 'escreva']
+enter_commands = ['enter', 'entrar']
 
 #Função para ouvir e reconhecer a fala
 def ouvir_microfone(root=None):
@@ -44,12 +46,25 @@ def ouvir_microfone(root=None):
         frase_lower = frase.lower()
         if frase_lower in click_1_commands:
             pyautogui.click()  
-        if frase_lower in click_2_commands:
+        elif frase_lower in click_2_commands:
             pyautogui.rightClick()  
-        if frase_lower in scroll_commands:
+        elif frase_lower in scroll_commands:
             pyautogui.middleClick()   
-        if frase_lower in double_click_commands:
+        elif frase_lower in double_click_commands:
             pyautogui.doubleClick()
+        elif frase_lower in enter_commands:
+            pyautogui.typewrite(['enter'])
+        elif frase_lower.split(' ')[0] in type_commands:
+                text = frase_lower.split(' ', 1)[1]
+                pyautogui.write(text)
+        else:
+            pyautogui.write(frase)
+        # try:
+        #     if frase_lower.split(' ')[0] in type_commands:
+        #         text = frase_lower.split(' ', 1)[1]
+        #         pyautogui.write(text)
+        # except:
+        #     pass
         # if "clica" in frase.lower() or "clique" in frase.lower() or "click" in frase.lower():
         #     pyautogui.click()  
         #Retorna a frase pronunciada

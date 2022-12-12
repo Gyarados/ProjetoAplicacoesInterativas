@@ -1,0 +1,1 @@
+start "" /d "." python interface.py
