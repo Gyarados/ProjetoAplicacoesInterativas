@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lcode\\Desktop\\projeto\\projeto.csproj": {}
+    "C:\\Users\\lcode\\Documents\\Poli\\Tecnologias Interativas\\ProjetoAplicacoesInterativas\\codigo_cs\\projeto.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lcode\\Desktop\\projeto\\projeto.csproj": {
+    "C:\\Users\\lcode\\Documents\\Poli\\Tecnologias Interativas\\ProjetoAplicacoesInterativas\\codigo_cs\\projeto.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lcode\\Desktop\\projeto\\projeto.csproj",
+        "projectUniqueName": "C:\\Users\\lcode\\Documents\\Poli\\Tecnologias Interativas\\ProjetoAplicacoesInterativas\\codigo_cs\\projeto.csproj",
         "projectName": "projeto",
-        "projectPath": "C:\\Users\\lcode\\Desktop\\projeto\\projeto.csproj",
+        "projectPath": "C:\\Users\\lcode\\Documents\\Poli\\Tecnologias Interativas\\ProjetoAplicacoesInterativas\\codigo_cs\\projeto.csproj",
         "packagesPath": "C:\\Users\\lcode\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lcode\\Desktop\\projeto\\obj\\",
+        "outputPath": "C:\\Users\\lcode\\Documents\\Poli\\Tecnologias Interativas\\ProjetoAplicacoesInterativas\\codigo_cs\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lcode\\AppData\\Roaming\\NuGet\\NuGet.Config"
